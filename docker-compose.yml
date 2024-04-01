@@ -7,6 +7,6 @@ services:
       context: .
       dockerfile: Backend.Api/Dockerfile
     ports:
-       - 7170:80
+       - 7172:80
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
