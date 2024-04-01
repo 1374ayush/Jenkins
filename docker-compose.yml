@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  backend.api:
+    image: ${DOCKER_REGISTRY-}backendapi
+    build:
+      context: .
+      dockerfile: Backend.Api/Dockerfile
+    ports:
+       - 7170:80
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
