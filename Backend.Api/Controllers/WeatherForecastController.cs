@@ -9,7 +9,7 @@ namespace Backend.Api.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IActionResult Get()
         {
-            return Ok("It has been published on Jenkins");
+            return Ok("It has been published on Jenkins and other containers are stoped");
         }
     }
 }
