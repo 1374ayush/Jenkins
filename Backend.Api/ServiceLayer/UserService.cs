@@ -1,4 +1,6 @@
-﻿namespace Backend.Api.ServiceLayer
+﻿using Backend.Api.GlobalExceptionHandling;
+
+namespace Backend.Api.ServiceLayer
 {
     public class UserService : IUserService
     {
@@ -16,6 +18,12 @@
 
         public List<UserModel> GetUserList()
         {
+            var res = new ErrorResponsee()
+            {
+                Success = true,
+                Message = "custom error"
+            };
+            throw new ApplicationException("user created error");
             return UserList;
         }
     }

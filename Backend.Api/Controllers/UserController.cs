@@ -22,7 +22,8 @@ namespace Backend.Api.Controllers
         [ApiKeyFilter]
         public IActionResult GetUsers()
         {
-            return Ok(_userService.GetUserList());
+            var res = _userService.GetUserList();
+            return Ok(res);
         }
 
         [HttpPost]

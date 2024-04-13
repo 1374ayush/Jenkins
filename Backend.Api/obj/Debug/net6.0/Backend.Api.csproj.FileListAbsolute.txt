@@ -64,3 +64,4 @@ C:\Users\ayushsrivastava03\OneDrive - Nagarro\Desktop\Jenkins\Backend.Api\obj\De
 C:\Users\ayushsrivastava03\OneDrive - Nagarro\Desktop\Jenkins\Backend.Api\obj\Debug\net6.0\Backend.Api.pdb
 C:\Users\ayushsrivastava03\OneDrive - Nagarro\Desktop\Jenkins\Backend.Api\obj\Debug\net6.0\Backend.Api.genruntimeconfig.cache
 C:\Users\ayushsrivastava03\OneDrive - Nagarro\Desktop\Jenkins\Backend.Api\obj\Debug\net6.0\ref\Backend.Api.dll
+C:\Users\ayushsrivastava03\OneDrive - Nagarro\Desktop\Jenkins\Backend.Api\bin\Debug\net6.0\Newtonsoft.Json.dll
