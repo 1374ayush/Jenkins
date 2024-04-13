@@ -1,3 +1,4 @@
+using Backend.Api.ActionFilter;
 using Backend.Api.ServiceLayer;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ApiKeyFilter>();
 
 var app = builder.Build();
 

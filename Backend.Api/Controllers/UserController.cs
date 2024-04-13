@@ -1,4 +1,5 @@
-﻿using Backend.Api.ServiceLayer;
+﻿using Backend.Api.ActionFilter;
+using Backend.Api.ServiceLayer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,13 +10,16 @@ namespace Backend.Api.Controllers
     public class UserController : ControllerBase
     {
         private IUserService _userService;
+        private IConfiguration _config;
 
-        public UserController(IUserService userService) 
+        public UserController(IUserService userService, IConfiguration config) 
         {
             _userService = userService;
+            _config  = config;  
         }
 
         [HttpGet]
+        [ApiKeyFilter]
         public IActionResult GetUsers()
         {
             return Ok(_userService.GetUserList());
