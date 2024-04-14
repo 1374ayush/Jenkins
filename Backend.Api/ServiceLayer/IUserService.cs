@@ -3,7 +3,7 @@ namespace Backend.Api.ServiceLayer
 {
     public interface IUserService
     {
-        bool AddUser(UserModel user);
-        List<UserModel> GetUserList();
+        Task<bool> AddUser(UserModel user);
+        Task<List<UserModel>> GetUserList();
     }
 }

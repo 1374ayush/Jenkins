@@ -10,20 +10,20 @@ namespace Backend.Api.ServiceLayer
                 new UserModel(){Name = "Aman", age=24, PersonId=92 }
             };
 
-        public bool AddUser(UserModel user)
+        public async Task<Boolean> AddUser(UserModel user)
         {
-            UserList.Add(user);
+           UserList.Add(user);
             return true;
         }
 
-        public List<UserModel> GetUserList()
+        public async Task<List<UserModel>> GetUserList()
         {
             var res = new ErrorResponsee()
             {
                 Success = true,
                 Message = "custom error"
             };
-            throw new ApplicationException("user created error");
+            throw new ApplicationException(res.Message);
             return UserList;
         }
     }

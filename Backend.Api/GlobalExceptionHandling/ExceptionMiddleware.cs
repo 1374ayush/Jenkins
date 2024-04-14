@@ -7,7 +7,6 @@ namespace Backend.Api.GlobalExceptionHandling
     {
         private readonly RequestDelegate _next;
        
-
         public ExceptionMiddleware(RequestDelegate next)
         {
             _next = next;
@@ -50,7 +49,7 @@ namespace Backend.Api.GlobalExceptionHandling
 
                 case GlobalExceptions ex:
                     response.StatusCode = (int)HttpStatusCode.BadRequest;
-                    errorResponse.Message = ex.Message;
+                     errorResponse.Message = ex.Message;
                     var result = JsonConvert.SerializeObject(errorResponse);
                     await context.Response.WriteAsync(result);
                     break;
@@ -58,6 +57,7 @@ namespace Backend.Api.GlobalExceptionHandling
                 default:
                     response.StatusCode = (int)HttpStatusCode.InternalServerError;
                     errorResponse.Message = "Internal server error!";
+                    await context.Response.WriteAsync(errorResponse.Message);
                     break;
             }
 

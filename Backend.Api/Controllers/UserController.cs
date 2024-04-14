@@ -20,16 +20,16 @@ namespace Backend.Api.Controllers
 
         [HttpGet]
         [ApiKeyFilter]
-        public IActionResult GetUsers()
+        public async Task<IActionResult> GetUsers()
         {
-            var res = _userService.GetUserList();
+            var res = await _userService.GetUserList();
             return Ok(res);
         }
 
         [HttpPost]
-        public IActionResult AddUser(UserModel user)
+        public async Task<IActionResult> AddUser(UserModel user)
         {
-            bool res = _userService.AddUser(user);
+            bool res = await _userService.AddUser(user);
             if (res) { return Ok("User Added");  }
             return BadRequest("Error Occured");
         }
