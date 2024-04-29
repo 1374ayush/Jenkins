@@ -19,7 +19,7 @@ namespace Backend.Api.Controllers
         }
 
         [HttpGet]
-        [ApiKeyFilter]
+       /* [ApiKeyFilter]*/
         public async Task<IActionResult> GetUsers()
         {
             var res = await _userService.GetUserList();

@@ -20,7 +20,7 @@ namespace Backend.Api.GlobalExceptionHandling
             }
             catch (Exception ex)
             {
-                await HandleExceptionAsync(httpContext, ex);
+               await HandleExceptionAsync(httpContext, ex);
             }
         }
 
@@ -44,14 +44,14 @@ namespace Backend.Api.GlobalExceptionHandling
                     }
                     response.StatusCode = (int)HttpStatusCode.BadRequest;
                     errorResponse.Message = ex.Message;
-                    await context.Response.WriteAsync(errorResponse.Message);
+                     await context.Response.WriteAsync(errorResponse.Message);
                     break;
 
                 case GlobalExceptions ex:
                     response.StatusCode = (int)HttpStatusCode.BadRequest;
                      errorResponse.Message = ex.Message;
                     var result = JsonConvert.SerializeObject(errorResponse);
-                    await context.Response.WriteAsync(result);
+                     await context.Response.WriteAsync(result);
                     break;
 
                 default:
