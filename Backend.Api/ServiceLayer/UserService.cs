@@ -23,7 +23,7 @@ namespace Backend.Api.ServiceLayer
                 Success = true,
                 Message = "custom error"
             };
-            throw new ApplicationException(res.Message);
+           // throw new ApplicationException(res.Message);
             return UserList;
         }
     }
